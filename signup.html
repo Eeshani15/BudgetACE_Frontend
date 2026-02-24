@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BudgetACE - Sign Up</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <div class="bg-decor" aria-hidden="true">
+    <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+    <div class="float f1">🌸</div><div class="float f2">💵</div><div class="float f3">🌷</div>
+    <div class="float f4">💰</div><div class="float f5">🌼</div><div class="float f6">🪙</div>
+  </div>
+
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">🌸</div>
+      <div>
+        <div class="brand-name">BudgetACE</div>
+        <div class="brand-tagline">Create your account</div>
+      </div>
+    </div>
+    <div style="display:flex; gap:10px;">
+      <a href="index.html"><button class="btn ghost" type="button">Home</button></a>
+      <a href="signin.html"><button class="btn soft" type="button">Sign In</button></a>
+    </div>
+  </header>
+
+  <main class="wrap center">
+    <section class="card panel">
+      <div class="left">
+        <h2>Sign Up</h2>
+        <p class="muted" style="margin-top:8px;">Create your account to start tracking.</p>
+
+        <form class="form" id="signUpForm">
+          <label>
+            Name
+            <input id="upName" type="text" placeholder="e.g., Eeshani" required />
+          </label>
+
+          <label>
+            Email
+            <input id="upEmail" type="email" placeholder="e.g., eeshani@gmail.com" required />
+          </label>
+
+          <label>
+            Password (min 11 characters)
+            <input id="upPassword" type="password" placeholder="Create a strong password" required />
+          </label>
+
+          <div id="upMsg" class="error" style="min-height:18px;"></div>
+
+          <button class="btn primary" type="submit">Create Account</button>
+          <p class="hint">After signup, you will be redirected to the app.</p>
+        </form>
+      </div>
+
+      <div class="right">
+        <div class="hero-card">
+          <div class="hero-top">
+            <div style="font-weight:1000;">What you'll get</div>
+            <div class="hero-badge">✨ Starter</div>
+          </div>
+          <div class="metric">
+            <div class="metric-label">Budget categories</div>
+            <div class="metric-value">🏠🛒💡</div>
+          </div>
+          <div class="metric">
+            <div class="metric-label">Savings %</div>
+            <div class="metric-value">💰</div>
+          </div>
+          <div class="metric">
+            <div class="metric-label">Improvement tracking</div>
+            <div class="metric-value">📈</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="auth.js"></script>
+</body>
+</html>

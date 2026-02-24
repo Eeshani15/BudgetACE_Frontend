@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BudgetACE - Dashboard</title>
+  <link rel="stylesheet" href="style.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="bg-decor" aria-hidden="true">
+    <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+    <div class="float f1">🌸</div><div class="float f2">💵</div><div class="float f3">🌷</div>
+    <div class="float f4">💰</div><div class="float f5">🌼</div><div class="float f6">🪙</div>
+  </div>
+
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">🌸</div>
+      <div>
+        <div class="brand-name">BudgetACE</div>
+        <div class="brand-tagline">Your dashboard</div>
+      </div>
+    </div>
+    <div style="display:flex; gap:10px;">
+      <button id="logoutBtn" class="btn ghost" type="button">Logout</button>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div class="grid">
+
+      <!-- LEFT: Inputs -->
+      <section class="card card-pad">
+        <h2 id="hello">Hi 👋</h2>
+        <p class="muted" id="emailLine"></p>
+
+        <div style="height:10px;"></div>
+
+        <div class="form" style="margin-top:0;">
+          <label>
+            Month Label (example: Feb 2026)
+            <input id="monthLabel" type="text" placeholder="Feb 2026"/>
+          </label>
+
+          <label>
+            Salary Pay Date (Calendar)
+            <input id="payDate" type="date"/>
+            <p class="hint">Pick the date your salary comes (example: 2nd).</p>
+          </label>
+
+          <label>
+            Monthly Income ($)
+            <input id="income" type="number" min="0" step="1" placeholder="500"/>
+          </label>
+        </div>
+
+        <div class="note" id="syncMsg" style="margin-top:10px;">
+          Connecting to BudgetACE backend…
+        </div>
+
+        <div style="margin-top:10px;">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Category</th>
+                <th>Budget ($)</th>
+                <th>Spent ($)</th>
+                <th>% Income</th>
+              </tr>
+            </thead>
+            <tbody id="catBody"></tbody>
+          </table>
+        </div>
+
+        <div class="kpiRow">
+          <div class="kpi"><div class="kpiTitle">Allocated</div><div class="kpiValue" id="kAllocated">$0</div></div>
+          <div class="kpi"><div class="kpiTitle">Spent</div><div class="kpiValue" id="kSpent">$0</div></div>
+          <div class="kpi"><div class="kpiTitle">Remaining</div><div class="kpiValue" id="kRemain">$0</div></div>
+          <div class="kpi"><div class="kpiTitle">Savings %</div><div class="kpiValue" id="kSavePct">0%</div></div>
+        </div>
+
+        <div class="note" id="insight">
+          New user: Save your first month to start “improvement” tracking 🌸
+        </div>
+
+        <div style="display:flex; gap:10px; margin-top:12px; flex-wrap:wrap;">
+          <button id="saveMonth" class="btn primary" type="button">Save & Calculate</button>
+          <button id="resetMonth" class="btn ghost" type="button">Reset</button>
+        </div>
+      </section>
+
+      <!-- RIGHT: Charts + History -->
+      <section class="card card-pad">
+        <h2>Charts</h2>
+        <p class="muted">Spending breakdown + budget vs spent.</p>
+
+        <div style="margin-top:12px;">
+          <div class="card" style="padding:12px; border-radius:18px; background: rgba(255,255,255,.75);">
+            <div style="font-weight:1000; margin-bottom:10px;">Spending by Category</div>
+            <canvas id="pie"></canvas>
+          </div>
+        </div>
+
+        <div style="margin-top:12px;">
+          <div class="card" style="padding:12px; border-radius:18px; background: rgba(255,255,255,.75);">
+            <div style="font-weight:1000; margin-bottom:10px;">Budget vs Spent</div>
+            <canvas id="bar"></canvas>
+          </div>
+        </div>
+
+        <div style="margin-top:14px; display:flex; justify-content:space-between; align-items:center;">
+          <h2 style="margin:0;">History</h2>
+          <button id="clearHistory" class="btn ghost" type="button">Clear</button>
+        </div>
+
+        <div id="history" style="display:grid; gap:10px; margin-top:10px;"></div>
+      </section>
+
+    </div>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

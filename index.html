@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BudgetACE - Welcome</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <!-- Background Decorations -->
+  <div class="bg-decor" aria-hidden="true">
+    <div class="blob b1"></div>
+    <div class="blob b2"></div>
+    <div class="blob b3"></div>
+
+    <div class="float f1">🌸</div>
+    <div class="float f2">💵</div>
+    <div class="float f3">🌷</div>
+    <div class="float f4">💰</div>
+    <div class="float f5">🌼</div>
+    <div class="float f6">🪙</div>
+  </div>
+
+  <!-- Top Bar -->
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">🌸</div>
+      <div>
+        <div class="brand-name">BudgetACE</div>
+        <div class="brand-tagline">Smart money, beautifully managed</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Centered Content -->
+  <main class="wrap center">
+    <section class="card" style="padding:60px 40px; text-align:center; max-width:700px; width:100%;">
+      
+      <h1 style="font-size:38px;">
+        Welcome to <span style="color:#8b5cf6;">BudgetACE</span> 💰
+      </h1>
+
+      <p class="muted" style="margin-top:15px; font-size:16px;">
+        Plan your month, track your spending, and improve your savings —  
+        with a soft pastel vibe 🌸✨
+      </p>
+
+      <div style="margin-top:30px; display:flex; justify-content:center; gap:15px; flex-wrap:wrap;">
+        <a href="signin.html">
+          <button class="btn primary" style="padding:12px 24px;">Sign In</button>
+        </a>
+
+        <a href="signup.html">
+          <button class="btn ghost" style="padding:12px 24px;">Sign Up</button>
+        </a>
+      </div>
+
+      <p class="hint" style="margin-top:25px;">
+        Demo version uses browser storage. Later we can connect Django + database.
+      </p>
+
+    </section>
+  </main>
+
+  <script src="auth.js"></script>
+
+</body>
+</html>
